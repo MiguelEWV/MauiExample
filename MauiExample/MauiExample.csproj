@@ -65,16 +65,34 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="ExStackLayout.xaml.cs">
+	    <DependentUpon>ExStackLayout.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="ExTabbedPage.xaml.cs">
+	    <DependentUpon>ExTabbedPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="ExFlyoutPage.xaml.cs">
+	    <DependentUpon>ExFlyoutPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="ExContentPage.xaml.cs">
+	    <DependentUpon>ExContentPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Inicio.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="LayoutFlotante.xaml">
+	  <MauiXaml Update="ExFlyoutPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Menu.xaml">
+	  <MauiXaml Update="ExContentPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Tabbed.xaml">
+	  <MauiXaml Update="ExStackLayout.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ExTabbedPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

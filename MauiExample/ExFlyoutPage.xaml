@@ -1,24 +1,42 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <FlyoutPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiExample.LayoutFlotante"
-             Title="LayoutFlotante">
+             x:Class="MauiExample.ExFlyoutPage"
+             Title="ExFlyoutPage">
 
     <FlyoutPage.Flyout>
-        <ContentPage Title="Menu">
+        <ContentPage Title="Menu" Padding="10"
+                     >
             <StackLayout>
                 <Label Text="Menu" 
-                       FontSize="Large" 
+                       FontSize="Title" 
                        HorizontalOptions="Center" 
                        />
-                <Label Text="Primera Opcion" 
-                       FontSize="Large" 
+                <Label Text="ExStackLayout" 
+                       FontSize="15" 
                        HorizontalOptions="Center"
-                       Margin="10"
+                       Margin="0,20,0,0"
                        />
-                <Button Text="Segunda Opcion" 
+                <Button
+                        Text="Entrar" 
                         HorizontalOptions="Center"
-                        Margin="1"
+                        Background="FloralWhite"
+                        TextColor="Black"
+                        FontSize="Body" 
+                        Clicked="ExStackLayout"
+                        />
+                <Label Text="ExTabbedPage" 
+                       FontSize="15" 
+                       HorizontalOptions="Center"
+                       Margin="0,20,0,0"
+                       />
+                <Button
+                        Text="Entrar" 
+                        HorizontalOptions="Center"
+                        Background="FloralWhite"
+                        TextColor="Black"
+                        FontSize="Body"
+                        Clicked="ExTabbedPage"
                         />
             </StackLayout>
         </ContentPage>
@@ -48,7 +66,7 @@
         </NavigationPage>
     </FlyoutPage.Detail>
     <!--Este es una paguina que contiene el contenido del Label "Inicio" Creo (Alerta)-->
-    <!--Para crear espacios de linea en xaml se usa el codigo &#10-->
+    <!--Para crear espacios de linea en xaml se usa el codigo &#10; -->
     
 
 </FlyoutPage>
