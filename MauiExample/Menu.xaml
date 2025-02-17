@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiExample.Menu"
+             Title="Menu">
+    <VerticalStackLayout>
+        <Label 
+            Text="Aplicativo MAUI de amostra"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Margin="10,20,10,0"
+            FontSize="Header"
+         />
+        
+        <Button
+            Text="Entrar"
+            Clicked="Pagina02" 
+            AnchorX="10" 
+            AnchorY="10" 
+            BackgroundColor="#FF3D23" 
+            CornerRadius="4" 
+            FontSize="Medium" 
+            Margin="10,100,10,0"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+        />
+        <!-- Clicked="" 
+        Funcion utilizada para usar accion de boton el parametro colocado dentro 
+        de los parentecis se refiere al nombre usado para llamar el comando insertado
+        en el archivo "Inici.Xaml.cs"
+        -->
+
+        <!-- Horizontal / VerticalOptions="" 
+        Funcion utilizada para centralizar com el maximo de margenes un objeto"
+        -->
+
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiExample.Inicio"
+             Title="Inicio">
+    
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center"
+            HorizontalOptions="Center" 
+            Margin="10,20,10,0"
+            FontSize="Header"/>
+
+        <Button
+            Text="Voltar"
+            Clicked="Voltar"
+            AnchorX="10" 
+            AnchorY="10" 
+            BackgroundColor="#FF3D23" 
+            CornerRadius="4" 
+            FontSize="Medium" 
+            Margin="10,100,10,0"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+
+        <!-- Clicked="" 
+        Funcion utilizada para usar accion de boton
+        el parametro colocado dentro doe los parentecis 
+        se refiere al nombre usado para llamar el comando 
+        insertado en el archivo "Inici.Xaml.cs"
+        -->
+
+        <!-- Como comentar -->
+    </VerticalStackLayout>
+    
+</ContentPage>

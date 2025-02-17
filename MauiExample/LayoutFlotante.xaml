@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiExample.LayoutFlotante"
+             Title="LayoutFlotante">
+
+    <FlyoutPage.Flyout>
+        <ContentPage Title="Menu">
+            <StackLayout>
+                <Label Text="Menu" 
+                       FontSize="Large" 
+                       HorizontalOptions="Center" 
+                       />
+                <Label Text="Primera Opcion" 
+                       FontSize="Large" 
+                       HorizontalOptions="Center"
+                       Margin="10"
+                       />
+                <Button Text="Segunda Opcion" 
+                        HorizontalOptions="Center"
+                        Margin="1"
+                        />
+            </StackLayout>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+    <!--Este es el menu desplazante, -->
+        <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <ContentPage Title="Primera Opcion">
+                    <StackLayout>
+                        <Label Text="Esta es la pagina de la opcion&#10;'Primera Opcion' " 
+                               FontSize="Large" 
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center" 
+                               />
+                        <Button Text="Inicio"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                Padding="5"
+                                FontAutoScalingEnabled="True"
+                                FontSize="Large" 
+                                Margin="10"
+                                />
+                    </StackLayout>
+                </ContentPage>
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+    <!--Este es una paguina que contiene el contenido del Label "Inicio" Creo (Alerta)-->
+    <!--Para crear espacios de linea en xaml se usa el codigo &#10-->
+    
+
+</FlyoutPage>
