@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiExample.ExGrid"
+             Title="ExGrid">
+    <!--De extrema utilidad, la Grid es usada para contener dentro Filas y columnas definidas por mi.
+     las columnas y filas son indexadas siempre con inicio del numero 0.
+    Para definir que una fila o columna se llene al maximo se usa el simbolo "*" .
+    Importante al usar "*" con este codigo puedo ingresar el % total que puede ocupar una fila ou columna
+    Ejemplo: ".4*" ocupara 40% de todo el espacio ".7*" ocupara 70% de todo el espacio
+    Para definir el tamaño de la fila o columna como automatica igualando para todos se usa "Auto".
+    LaCantidad de <RowDefinition/> o <ColumnDefinition/> define la cantidad de colunas y lineas usadas en la grid
+    si repito <ColumnDefinition/> 3 vezes tendre 3 Colunas.
+    
+    -->
+    <Grid 
+        RowDefinitions="Auto,.1*,.8*,Auto"
+        ColumnDefinitions="Auto,*,*,Auto"
+        >
+        <!--Metodo simplificado es colocar las definiciones das grid dentro del grid y separa la cantidad por comas-->
+        <!--<Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>-->
+        <Label 
+            Text="Welcome to ExGrid!"
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            VerticalOptions="Center"  
+            HorizontalTextAlignment="Center"
+            Background="AliceBlue"
+            FontSize="Title"
+            />
+        <Label 
+            Text="Row 1, Column 0"
+            Grid.Row="1"
+            Grid.Column="0"
+            Background="LightBlue"
+            FontSize="Large"
+            />
+        <Label 
+            Text="Row 1, Column 1"
+            Grid.Row="1"
+            Grid.Column="1"
+            Background="LightGreen"
+            FontSize="Large"
+            />
+        <Label 
+            Text="Row 1, Column 2"
+            Grid.Row="1"
+            Grid.Column="2"
+            Background="LightYellow"
+            FontSize="Large"
+            />
+        <Label 
+            Text="Row 2, Column 0"
+            Grid.Row="2"
+            Grid.Column="0"
+            Background="LightCoral"
+            FontSize="Large"
+            />
+        <Label 
+            Text="Row 2, Column 1"
+            Grid.Row="2"
+            Grid.Column="1"
+            Background="LightGray"
+            FontSize="Large"
+            />
+        <Label 
+            Text="Row 2, Column 2"
+            Grid.Row="2"
+            Grid.Column="2"
+            Background="LightPink"
+            FontSize="Large"
+            />
+
+    </Grid>
+    
+</ContentPage>

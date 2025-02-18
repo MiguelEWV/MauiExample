@@ -38,9 +38,49 @@
                         FontSize="Body"
                         Clicked="ExTabbedPage"
                         />
-            </StackLayout>
+                <Label Text="ExGrid" 
+                        FontSize="15" 
+                        HorizontalOptions="Center"
+                        Margin="0,20,0,0"
+                        />
+                <Button
+                        Text="Entrar" 
+                        HorizontalOptions="Center"
+                        Background="FloralWhite"
+                        TextColor="Black"
+                        FontSize="Body"
+                        Clicked="ExGrid"
+                        />
+                <Label Text="ExAbsoluteLayout" 
+                        FontSize="15" 
+                        HorizontalOptions="Center"
+                        Margin="0,20,0,0"
+                        />
+                <Button
+                        Text="Entrar" 
+                        HorizontalOptions="Center"
+                        Background="FloralWhite"
+                        TextColor="Black"
+                        FontSize="Body"
+                        Clicked="ExAbsoluteLayout"
+                        />
+                <Label Text="ExFlexLayout" 
+                        FontSize="15" 
+                        HorizontalOptions="Center"
+                        Margin="0,20,0,0"
+                        />
+                <Button
+                        Text="Entrar" 
+                        HorizontalOptions="Center"
+                        Background="FloralWhite"
+                        TextColor="Black"
+                        FontSize="Body"
+                        Clicked="ExFlexLayout"
+                        />
+
+            </StackLayout> 
         </ContentPage>
-    </FlyoutPage.Flyout>
+    </FlyoutPage.Flyout> 
     <!--Este es el menu desplazante, -->
         <FlyoutPage.Detail>
         <NavigationPage>
@@ -66,7 +106,7 @@
         </NavigationPage>
     </FlyoutPage.Detail>
     <!--Este es una paguina que contiene el contenido del Label "Inicio" Creo (Alerta)-->
-    <!--Para crear espacios de linea en xaml se usa el codigo &#10; -->
-    
+    <!--Para crear espacios de linea en xaml se usa el codigo &#10; --> 
+
 
 </FlyoutPage>

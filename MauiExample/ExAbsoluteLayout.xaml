@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiExample.ExAbsoluteLayout"
+             Title="ExAbsoluteLayout">
+    
+    <!--AbsoluteLayout es un layout que permite posicionar los elementos de forma absoluta, es decir,
+    que podemos definir la posición de los elementos en píxeles, en lugar de usar el flujo de diseño
+    normal de los otros layouts.
+    
+    Al posisicionar la ubicacion se usa, AbsoluteLayout.LayoutBounds="x,y,w,h"
+    x = a la ubicacion en el eje de isquierda a derecha
+    y = a la ubicacion en el eje de arriba hacia abajo
+    w = el abcho del iten
+    h = el alto del iten
+    
+    AbsoluteLayout.LayoutFlags="All" indica que el elemento se ajustará a todos los lados del diseño.
+    Advertencia: No se recomienda usar AbsoluteLayout en la mayoría de los casos, ya que no es adaptable
+    a diferentes tamaños de pantalla. Pero en algunos casos, puede ser útil.
+    
+    Cuando trabajo con AbsoluteLayout, es importante tener en cuenta que los elementos se superponen
+    unos a otros, por lo que el orden en el que se agregan los elementos al diseño es importante.
+    
+    Cuando uso AbsoluteLayout.LayoutFlags debos tener en cuenta que puedo usar los siguientes valores:
+    - None: No se ajusta a ningún lado.
+    - XProportional: Se ajusta al eje X.
+    - YProportional: Se ajusta al eje Y.
+    - WidthProportional: Se ajusta al ancho.
+    - HeightProportional: Se ajusta al alto.
+    - All: Se ajusta a todos los lados.
+    - SizeProportional: Se ajusta al tamaño, altura y ancho.
+    - PositionProportional: Se ajusta a la posición, eje X y eje Y.
+   
+    Al usar Flags, puedo combinarlos, por ejemplo, si quiero que un elemento se ajuste al eje X y al eje Y,
+    puedo usar XProportional | YProportional.
+    Y debo tener en cuenta que el valor de LayoutBounds debe ser entre 0 y 1, ya que es un valor proporcional.
+    
+    -->
+
+    <AbsoluteLayout>
+        <Label 
+            Text="Welcome to ExAbsoluteLayout!"
+            AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.5, 0.1"
+            AbsoluteLayout.LayoutFlags="All"
+            Background="AliceBlue"
+            FontSize="Title"
+            />
+    </AbsoluteLayout>
+
+</ContentPage>

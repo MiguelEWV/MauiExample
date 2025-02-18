@@ -16,4 +16,25 @@ public partial class ExFlyoutPage : FlyoutPage
     {
         Navigation.PushModalAsync(new ExTabbedPage());
     }
+
+    private void ExGrid(object sender, EventArgs e)
+    {
+        Navigation.PushModalAsync(new ExGrid());
+    }
+
+    private void ExAbsoluteLayout(object sender, EventArgs e)
+    {
+        Navigation.PushModalAsync(new ExAbsoluteLayout());
+    }
+    
+
+    private void ExFlexLayout(object sender, EventArgs e)
+    {
+        Navigation.PushModalAsync(new ExFlexLayout());
+    }
+    
+
+
+
+
 }
