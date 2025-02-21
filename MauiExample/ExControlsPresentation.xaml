@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiExample.ExControlsPresentation"
+             Title="ExControlsPresentation">
+
+<!--ScrollView se usa para ter posibilidade de usar barra rolante dentro de un tipo de contenido-->
+    <ScrollView>
+        <StackLayout>
+<!--BoxView se usa para crear un espacio en blanco, se puede usar para separar elementos-->
+                <BoxView BackgroundColor="Black"
+                 HeightRequest="200"/>
+
+            <Label Text="XAMARIN" TextColor="Black"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   HorizontalTextAlignment="Center"/>
+<!--Ellipse se usa para crear un circulo-->
+            <Ellipse Fill="DarkRed"
+                     Stroke="DarkGreen"
+                     StrokeThickness="10"
+                     HeightRequest="200"
+                     HorizontalOptions="Center"
+                     WidthRequest="200"/>
+<!--Line se usa para crear una linea-->
+            <Line Stroke="Black"
+                  X1="0"
+                  Y1="0"
+                  X2="100"                  
+                  Y2="50"
+                  StrokeThickness="10"/>
+<!--Rectangle se usa para crear un rectangulo-->
+            <Rectangle Fill="DarkRed"
+                       Stroke="Black"
+                       StrokeThickness="5"
+                       HeightRequest="50"                       
+                       HorizontalOptions="End"
+                       WidthRequest="150"
+                       RadiusX="10"
+                       RadiusY="10"/>
+<!--Polygon se usa para crear un poligono-->
+            <Polygon Fill="LightBlue"
+                     Points="40,10 70,80 10,50"
+                     Stroke="DarkBlue"
+                     StrokeThickness="5"/>
+
+            <Polygon Fill="Yellow"
+                     Points="40,10 70,80 10,50"
+                     Stroke="Green"
+                     StrokeDashArray="1,1"
+                     StrokeDashOffset="6"
+                     StrokeThickness="5"/>
+<!-- Polyline se usa para crear una linea con varios puntos-->
+            <Polyline Points="0,0 10,30, 15,0 18,60 23,30 35,30 40,0 43,60 48,30 100,30"
+                    Stroke="Red" />
+
+            <Polyline Points="0 48, 0 144, 96 150, 100 0, 192 0, 192 96, 50 96, 48 192, 150 200 144 48"
+                  Fill="Blue"
+                  Stroke="Red"
+                  StrokeThickness="3" />
+<!-- Path se usa para crear una figura personalizada-->
+            <Path Aspect="Uniform"
+                  Data="M 10,100 L 100,100 100,50Z"
+                  HorizontalOptions="Center"
+                  Stroke="Black"/>
+<!-- Border se usa para crear un borde-->
+            <Border Stroke="#C49B33"
+                 StrokeThickness="4"
+                Background="#2B0B98"
+                Padding="16,8"
+                HorizontalOptions="Center">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="40,0,0,40" />
+                </Border.StrokeShape>
+                <Label Text="Welcome to .NET MAUI!"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                   TextColor="White"/>
+            </Border>
+<!-- Frame se usa para crear un marco-->
+            <Frame Margin="5"
+                   BackgroundColor="Azure"
+                   Padding="10">
+                <Image Source="dotnet_bot.svg"/>
+            </Frame>
+<!-- WebView se usa para mostrar una pagina web-->
+            <WebView HeightRequest="500"
+                         Source="https://academia.elcamino.dev"/>
+
+            <!--Entry se usa para crear un campo de texto-->
+            <Entry Placeholder="Digite seu nome"
+                   TextColor="Black"
+                   BackgroundColor="White"
+                   HorizontalOptions="Center"
+                   WidthRequest="200"/>
+        </StackLayout>
+    </ScrollView>
+
+
+</ContentPage>

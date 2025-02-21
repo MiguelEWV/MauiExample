@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiExample.ExComandControl"
+             Title="ExComandControl">
+    <ScrollView>
+        <StackLayout>
+
+
+            <Label Text="Comandos de entrada de usuario" 
+               FontSize="Title" 
+               HorizontalOptions="Center" 
+               />
+
+            <Button x:Name="btnTest" 
+                Text="Click Me!" 
+                />
+            <!--ImageButton es usado para mostrar una imagen en un botón.-->
+            <ImageButton Source="dotnet_bot.svg"
+                     Clicked="ImageButton_Clicked"/>
+
+            <!--RadioButton es usado para mostrar una lista de opciones, donde solo una puede ser seleccionada.-->
+            <!--CheckedChanged e usado para detectar cuando el usuario cambia la selección.-->
+            <!--GroupName se usa para agrupar los RadioButton, de manera que solo uno de cada grupo puede ser seleccionado.-->
+            <RadioButton CheckedChanged="RadioButton_CheckedChanged" 
+                     Content="Option 1"
+                     GroupName="group1"/>
+            <RadioButton CheckedChanged="RadioButton_CheckedChanged" 
+                     Content="Option 2"
+                     GroupName="group1"/>
+            <RadioButton CheckedChanged="RadioButton_CheckedChanged" 
+                     Content="Option 3"
+                     GroupName="group2"/>
+            <RadioButton CheckedChanged="RadioButton_CheckedChanged" 
+                     Content="Option 4"
+                     GroupName="group2"/>
+
+            <!--CheckBox es usado para mostrar una lista de opciones, donde varias pueden ser seleccionadas.-->
+            <!--CheckedChanged e usado para detectar cuando el usuario cambia la selección.-->
+            <!--https://learn.microsoft.com/en-us/dotnet/maui/user-interface/controls/checkbox?view=net-maui-9.0-->
+            <CheckBox CheckedChanged="CheckBox_CheckedChanged"
+                  IsChecked="true"
+                  Color="Red"
+                  />
+
+            <CheckBox x:Name="chek01" />
+            <Label Text="Candela funciono. este es un segundo box">
+                <Label.Triggers>
+                    <DataTrigger TargetType="Label"
+                     Binding="{Binding Source={x:Reference chek01}, Path=IsChecked}"
+                     Value="true">
+                        <Setter Property="FontAttributes"
+                    Value="Italic, Bold" />
+                        <Setter Property="FontSize"
+                    Value="18" />
+                    </DataTrigger>
+                </Label.Triggers>
+            </Label>
+
+            <CheckBox CheckedChanged="CheckBox_CheckedChanged"
+                   IsChecked="False"
+                  Color="Beige"/>
+
+            <CheckBox CheckedChanged="CheckBox_CheckedChanged"
+                    Color="Azure"/>
+
+            <CheckBox CheckedChanged="CheckBox_CheckedChanged"
+                    Color="Black"/>
+
+
+            <!--DatePicker es usado para mostrar un calendario para seleccionar una fecha.-->
+            <!--DateSelected e usado para detectar cuando el usuario selecciona una fecha.-->
+            <DatePicker DateSelected="DatePicker_DateSelected"/>
+
+            <!--TimePicker es usado para mostrar un reloj para seleccionar una hora.-->
+            <!--TimeSelected e usado para detectar cuando el usuario selecciona una hora.-->
+            <TimePicker TimeSelected="TimePicker_TimeSelected"/>
+
+            <!--SearchBar es usado para mostrar un campo de búsqueda.-->
+            <!--SearchButtonPressed e usado para detectar cuando el usuario presiona el botón de búsqueda.-->
+            <SearchBar x:Name="searchControl" 
+                   SearchButtonPressed="searchControl_SearchButtonPressed"/>
+
+            <!--Slider es usado para seleccionar un valor de un rango.-->
+            <!--ValueChanged e usado para detectar cuando el usuario cambia el valor.-->
+            <Slider x:Name="sliderControl"
+                ValueChanged="sliderControl_ValueChanged"/>
+
+            <!-- Stepper es usado para incrementar o decrementar un valor.-->
+            <Stepper x:Name="stepperControl"
+                 ValueChanged="stepperControl_ValueChanged"/>
+
+            <!--https://learn.microsoft.com/pt-br/dotnet/maui/user-interface/controls/swipeview?view=net-maui-9.0-->
+            <SwipeView>
+                <!--Mostra los botones de la izquierda que seran mostrados al deslizar a la derecha-->
+                <!--Invoked e usado para detectar cuando el usuario selecciona un botón.-->
+                <SwipeView.LeftItems>
+                    <SwipeItems>
+                        <SwipeItem
+                            BackgroundColor="LightGreen"
+                            IconImageSource="dotnet_bot.png"  
+                            Invoked="SwipeItem_Invoked"
+                            Text="Locura"
+                            />
+                        <SwipeItem
+                            BackgroundColor="LightPink"
+                            IconImageSource="dotnet_bot.png"  
+                            Invoked="SwipeItem_Invoked"
+                            Text="Algun dia"/>
+                    </SwipeItems>
+                </SwipeView.LeftItems>
+                <!--Mostra los botones de la derecha que seran mostrados al deslizar a la izquierda-->
+                <!--Invoked e usado para detectar cuando el usuario selecciona un botón.-->
+                <SwipeView.RightItems>
+                    <SwipeItems>
+                        <SwipeItem
+                            BackgroundColor="LightGreen"
+                            IconImageSource="dotnet_bot.png"  
+                            Invoked="SwipeItem_Invoked"
+                            Text="Favorite"/>
+                        <SwipeItem
+                            BackgroundColor="LightPink"
+                            IconImageSource="dotnet_bot.png"  
+                            Invoked="SwipeItem_Invoked"
+                            Text="Delete"/>
+                    </SwipeItems>
+                </SwipeView.RightItems>
+                <!--Aqui e seu conteudo que sera mostrado na tela principal do SwipeView , e sera deslizado para a direita ou esquerda-->
+                <!--Content-->
+                <Grid BackgroundColor="LightGray"
+                      HeightRequest="60"
+                      WidthRequest="300">
+                    <Label HorizontalOptions="Center"
+                           Text="Swipe Right"
+                           VerticalOptions="Center"/>
+                </Grid>
+            </SwipeView>
+
+
+
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

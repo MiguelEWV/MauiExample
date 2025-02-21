@@ -77,7 +77,32 @@
                         FontSize="Body"
                         Clicked="ExFlexLayout"
                         />
-
+                <Label Text="ExControlsPresentation" 
+                        FontSize="15" 
+                        HorizontalOptions="Center"
+                        Margin="0,20,0,0"
+                        />
+                <Button
+                        Text="Entrar" 
+                        HorizontalOptions="Center"
+                        Background="FloralWhite"
+                        TextColor="Black"
+                        FontSize="Body"
+                        Clicked="ExControlsPresentation"
+                        />
+                <Label Text="ExComandControl" 
+                        FontSize="15" 
+                        HorizontalOptions="Center"
+                        Margin="0,20,0,0"
+                        />
+                <Button
+                        Text="Entrar" 
+                        HorizontalOptions="Center"
+                        Background="FloralWhite"
+                        TextColor="Black"
+                        FontSize="Body"
+                        Clicked="ExComandControl"
+                        />
             </StackLayout> 
         </ContentPage>
     </FlyoutPage.Flyout> 

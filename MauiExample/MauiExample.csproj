@@ -83,6 +83,12 @@
 	  <MauiXaml Update="ExAbsoluteLayout.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="ExComandControl.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ExControlsPresentation.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="ExFlexLayout.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

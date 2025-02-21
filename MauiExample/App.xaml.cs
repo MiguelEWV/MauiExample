@@ -32,7 +32,7 @@
             /*
             Codigo para mostrar Menu lateral no inivcio de la aplicacion.
             */
-            MainPage = new ExFlexLayout();
+            MainPage = new ExComandControl();
             /**************************************************************/
 
         }

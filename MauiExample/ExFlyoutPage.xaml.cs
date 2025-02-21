@@ -32,8 +32,17 @@ public partial class ExFlyoutPage : FlyoutPage
     {
         Navigation.PushModalAsync(new ExFlexLayout());
     }
-    
 
+    private void ExControlsPresentation(object sender, EventArgs e)
+    {
+        Navigation.PushModalAsync(new ExControlsPresentation());
+    }
+
+    private void ExComandControl(object sender, EventArgs e)
+    {
+        Navigation.PushModalAsync(new ExComandControl());
+    }
+    
 
 
 
