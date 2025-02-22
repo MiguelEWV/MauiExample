@@ -39,12 +39,22 @@ public partial class ExComandControl : ContentPage
 
     private void sliderControl_ValueChanged(object sender, ValueChangedEventArgs e)
     {
+        //Indico que voi a usar el control lblSliderValue, que es un label para mostrar el valor del slider en tiempo real.
+        //.Text es el texto que se muestra en el label. (Uso "." para llamar una propiedad, no caso a propiedad "Text")
+        //e.NewValue es el valor actual del slider.
+        //e. representa el evento que se esta ejecutando. que es el evento ValueChangedEventArgs. que esta en el private void sliderControl_ValueChanged(object sender, ValueChangedEventArgs e)
+        //ToString() convierte el valor a string para poder mostrarlo en el label.
+
+        lblSliderValue.Text = e.NewValue.ToString();
 
     }
 
     private void stepperControl_ValueChanged(object sender, ValueChangedEventArgs e)
     {
-
+        if (stepperControl != null) //Verifico si Esteper no es null para executar este codigo, llamando por el nombre x:name stepperControl
+        { 
+            lblSliderValue.Text = stepperControl.Value.ToString();
+        }
     }
 
     private void SwipeItem_Invoked(object sender, EventArgs e)

@@ -82,13 +82,60 @@
                    SearchButtonPressed="searchControl_SearchButtonPressed"/>
 
             <!--Slider es usado para seleccionar un valor de un rango.-->
-            <!--ValueChanged e usado para detectar cuando el usuario cambia el valor.-->
+            <!--ValueChanged e usado para detectar cuando el usuario cambia el valor.
+            Valor por padrao e 0 a 1, para mudar precisa acrescentar "Minimum e Maximum", tambien puede ser 
+            coloreada la Barra asi que  cambia el valor para eso uso los codigos "Minimum e MaximumTrackColor"
+            Caso desee colorear el Criculo boton que altera este valor, el codigo aser usado es "ThumbColor"-->
             <Slider x:Name="sliderControl"
-                ValueChanged="sliderControl_ValueChanged"/>
+                ValueChanged="sliderControl_ValueChanged"
+                    
+                    Minimum="0"
+                    Maximum="100"
+                    MinimumTrackColor="Red"
+                    MaximumTrackColor="Blue"
+                    ThumbColor="Black"
+                    />
+            <!-- x:Name="lblSliderValue" es usado para mostrar el valor actual del Slider.
+            xName e usado para chamar este objeto em no codigo para realizar la funcion de mundanca en este caso -->
+            <Label x:Name="lblSliderValue"
+               Text="0"
+               HorizontalOptions="Center"/>
 
-            <!-- Stepper es usado para incrementar o decrementar un valor.-->
+            <!-- Stepper es usado para incrementar o decrementar un valor.
+            Puedo poner valores minimos o maximos igual al control Slider, y puedo especificar cada cuantos valores incrementa-->
             <Stepper x:Name="stepperControl"
-                 ValueChanged="stepperControl_ValueChanged"/>
+                 ValueChanged="stepperControl_ValueChanged"
+                     
+                     Minimum="1"
+                     Maximum="100"
+                     Increment="3"
+                     />
+            
+            <!--Comando usado como interuptor-->
+            <Switch IsToggled="True"/>  
+            
+            <!--Entry usado para entrada de texto del usuario
+            Placeholder es usado para mostrar de fondo la informacao que es solicitada
+            NO es necesario colocar PlaceholderColor, se mantendra gris
+            Para definir si es una sena, y no mostrar los caracteres, entonces usar la propiedad "IsPassword"
+            Importate podemos forcar el tipo de teclado que sera usado , numeral o alfanumerico la propiedad es
+            "Keyboard" 
+            Para los eventos podemos usar:
+            TextChangeg -> Usado para ser accionado toda ves que el usuario ingresa un texto
+            Complete -> Al finalizar la entrada de texto
+            Siempre recordar usar "x:Name" para referenciar este objeto
+            -->
+            <Entry BackgroundColor="Azure"
+                   FontSize="20"
+                   Placeholder="Digite aqui"
+                   PlaceholderColor="Crimson"/>   
+            
+            <!-- El control Editor es util caso se precise usar un texto de multiples lineas
+            con la propiedad "AutoSize" -->
+            <Editor 
+                AutoSize="TextChanges"
+                />
+
 
             <!--https://learn.microsoft.com/pt-br/dotnet/maui/user-interface/controls/swipeview?view=net-maui-9.0-->
             <SwipeView>
