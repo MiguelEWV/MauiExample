@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiExample.ExCarouselView"
+             Title="ExCarouselView">
+
+    <!-- 
+    CarouselView es usado para mostrar una colección de elementos en una vista de carrusel.
+    Por algun motivo no funciona con aplicaciones Windows
+    -->
+    <StackLayout>
+
+        
+            <Label 
+            Text="Uso del CarouselView"
+            FontSize="40"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />       
+
+        <!-- 
+        IdicatorView muestra los indicadores de navegacion que nos informa la posision de cada elemento
+        bolitas o puntos en la parta inferior o superior, depende de donde lo coloque dentro del StackLayout
+        
+        https://learn.microsoft.com/en-us/dotnet/maui/user-interface/controls/carouselview/?view=net-maui-9.0
+        https://learn.microsoft.com/pt-br/dotnet/api/microsoft.maui.controls.carouselview?view=net-maui-9.0
+        -->
+       
+        <CarouselView IndicatorView="Indicador">
+
+        <!-- 
+        ItemsSource es la propiedad que se usa para enlazar la colección de elementos que se mostrarán en el carrusel.
+        -->
+        
+        <CarouselView.ItemsSource >
+
+            <!-- 
+            x:Array es una extensión de marcado que se usa para crear una matriz de elementos en XAML.
+            x:String es una extensión de marcado que se usa para crear una cadena en XAML.
+            Se crea una matriz de cadenas con los nombres de los elementos que se mostrarán en el carrusel.
+            Se puede cambiar el tipo de elementos que se mostrarán en el carrusel, en este caso se muestran cadenas.
+            -->
+            
+       <x:Array Type="{x:Type x:String}">
+            <x:String>Marte</x:String>
+            <x:String>Rio</x:String>
+            <x:String>Roberto</x:String>
+            <x:String>Cuba</x:String>
+            <x:String>Panela</x:String>
+            <x:String>Detroit</x:String>
+            <x:String>Paris</x:String>
+            <x:String>Londres</x:String>
+            <x:String>Espana</x:String>
+        </x:Array>
+    </CarouselView.ItemsSource>
+
+    
+    <!-- 
+    ItemTemplate es la propiedad que se usa para definir la apariencia de los elementos de datos.
+    -->
+            
+    <CarouselView.ItemTemplate>
+
+   <!-- 
+    DataTemplate es un contenedor de marcado que se usa para definir la apariencia de los elementos de datos.
+    -->
+                
+    <DataTemplate>
+
+                <StackLayout>
+
+                       <!-- 
+                       Border es un contenedor de marcado que se usa para agregar un borde a un elemento.
+                       -->
+                       
+                       <Border 
+                       Margin="10"
+                       Stroke="DarkGray"
+                       StrokeShape="RoundRectangle 5"                           
+                       HeightRequest="50"
+                       WidthRequest="110"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center">
+                       <Label Text="{Binding .}"/>
+
+                        <!-- 
+                        Binding es una extensión de marcado que se usa para enlazar una propiedad de un elemento a una propiedad de un objeto.
+                        . es un marcador de posición que se usa para enlazar el elemento actual.
+                        Text es la propiedad que se usa para definir el texto de un elemento.
+                        {Binding .} enlaza el texto del elemento actual.
+                        Como se enlaza usando Binding, el texto del elemento actual se muestra en el Label.
+                        -->
+                       
+                        </Border>
+
+                </StackLayout>
+
+            </DataTemplate>
+        </CarouselView.ItemTemplate>
+        
+    </CarouselView>
+
+    <!-- 
+    IndicatorView es un control que se usa para mostrar los indicadores de navegación en un carrusel.
+    -->
+        
+         <IndicatorView
+         x:Name="Indicador"
+         HorizontalOptions="Center"
+         IndicatorColor="LightGray"
+         SelectedIndicatorColor="DarkGray"/>
+
+        <Label 
+            Text="Uso del ListView"
+            FontSize="20"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <!-- 
+        ListView es un control que se usa para mostrar una colección de elementos en una lista.
+         HasUnevenRows es una propiedad que se usa para definir si las filas de la lista tienen alturas diferentes.
+         ItemsSource es la propiedad que se usa para enlazar la colección de elementos que se mostrarán en la lista.
+         x:Array es una extensión de marcado que se usa para crear una matriz de elementos en XAML.
+         x:String es una extensión de marcado que se usa para crear una cadena en XAML.
+         Se crea una matriz de cadenas con los nombres de los elementos que se mostrarán en la lista.
+         Se puede cambiar el tipo de elementos que se mostrarán en la lista, en este caso se muestran cadenas.
+         ListView.ItemTemplate es la propiedad que se usa para definir la apariencia de los elementos de datos.
+         DataTemplate es un contenedor de marcado que se usa para definir la apariencia de los elementos de datos.
+         ViewCell es un contenedor de marcado que se usa para definir la apariencia de un elemento de la lista.
+         StackLayout es un contenedor de marcado que se usa para organizar los elementos de la lista.
+         Border es un contenedor de marcado que se usa para agregar un borde a un elemento
+        
+        https://learn.microsoft.com/pt-br/dotnet/maui/user-interface/controls/listview?view=net-maui-9.0
+        .-->
+        
+        <ListView HasUnevenRows="True">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Diferentes</x:String>
+                    <x:String>Mesmos</x:String>
+                    <x:String>Outros</x:String>
+                    <x:String>el tercero</x:String>
+                    <x:String>el tercero</x:String>
+                     <x:String>el tercero</x:String>                    
+                </x:Array>
+            </ListView.ItemsSource>
+            
+            <ListView.ItemTemplate>
+                
+                <DataTemplate>
+                    
+                    <ViewCell>
+                        
+                        <StackLayout>
+                            <Border
+                            Margin="20"
+                            Stroke="DarkGray"
+                            StrokeShape="RoundRectangle 5"
+                            HeightRequest="45"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center">
+                            <Label Text="{Binding .}" />
+                            </Border>
+                        </StackLayout>
+                        
+                    </ViewCell>
+                    
+                </DataTemplate>
+                
+            </ListView.ItemTemplate>
+            
+        </ListView>
+         
+<!--
+                <Label 
+                        Text="Uso del CollectionView"
+                        FontSize="20"
+                        VerticalOptions="Center" 
+                        HorizontalOptions="Center" />
+-->       
+        <!-- CollectionView es un control que se usa para mostrar una colección de elementos en una vista de cuadrícula o lista.
+        SelectionMode es una propiedad que se usa para definir el modo de selección de los elementos de la colección.
+        Multiple es un valor de enumeración que se usa para definir que se pueden seleccionar varios elementos de la colección.
+        CollectionView.ItemsSource es la propiedad que se usa para enlazar la colección de elementos que se mostrarán en la vista.
+        x:Array es una extensión de marcado que se usa para crear una matriz de elementos en XAML.
+        x:String es una extensión de marcado que se usa para crear una cadena en XAML.
+        Se crea una matriz de cadenas con los nombres de los elementos que se mostrarán en la vista.
+        Se puede cambiar el tipo de elementos que se mostrarán en la vista, en este caso se muestran cadenas.
+        CollectionView.ItemTemplate es la propiedad que se usa para definir la apariencia de los elementos de datos.
+        DataTemplate es un contenedor de marcado que se usa para definir la apariencia de los elementos de datos.
+        StackLayout es un contenedor de marcado que se usa para organizar los elementos de la vista.
+        Border es un contenedor de marcado que se usa para agregar un borde a un elemento.
+        
+        https://learn.microsoft.com/pt-br/dotnet/maui/user-interface/controls/collectionview/?view=net-maui-9.0
+        -->
+<!--
+        <CollectionView SelectionMode="Multiple">
+            
+                <CollectionView.ItemsSource>
+                    
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Colecion</x:String>
+                        <x:String>Espana</x:String>
+                        <x:String>Cuba</x:String>
+                        <x:String>Brasil</x:String>
+                        <x:String>monodevelop</x:String>
+                        <x:String>monotone</x:String>
+                        <x:String>monopoly</x:String>
+                        <x:String>monomodal</x:String>
+                        <x:String>el quarto</x:String>
+                    </x:Array>
+                    
+                </CollectionView.ItemsSource>
+            
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        
+                        <StackLayout>
+                            
+                                <Border
+                                    Margin="20"
+                                    Stroke="DarkGray"
+                                    StrokeShape="RoundRectangle 5"
+                                    HeightRequest="30"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center">
+                                    <Label Text="{Binding .}" />
+                                </Border>
+                            
+                        </StackLayout>
+                        
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+        
+        </CollectionView>
+-->
+                     <Label 
+                     Text="Uso do Picker"
+                     FontSize="20"
+                     VerticalOptions="Center" 
+                     HorizontalOptions="Center" />
+
+        <!--
+        Picker es un control que se usa para mostrar una lista de elementos y permitir al usuario seleccionar uno de ellos.
+        VerticalOptions es una propiedad que se usa para definir la alineación vertical de un elemento.
+        Center es un valor de enumeración que se usa para definir que el elemento se alinea verticalmente en el centro.
+        Picker.ItemsSource es la propiedad que se usa para enlazar la colección de elementos que se mostrarán en el control.
+        
+        https://learn.microsoft.com/pt-br/dotnet/maui/user-interface/controls/picker?view=net-maui-9.0
+        -->
+        
+        <Picker VerticalOptions="Center"
+                x:Name="picker"
+                Title="Selecciona el Mono">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Baboon</x:String>
+                    <x:String>Capuchin Monkey</x:String>
+                    <x:String>Blue Monkey</x:String>
+                    <x:String>Squirrel Monkey</x:String>
+                    <x:String>Golden Lion Tamarin</x:String>
+                    <x:String>Howler Monkey</x:String>
+                    <x:String>Japanese Macaque</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        
+        
+        <Label 
+            Text="Uso do TableView"
+            FontSize="20"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <!-- TableView es un control que se usa para mostrar una colección de elementos en una tabla.
+        Intent es una propiedad que se usa para definir el propósito de la tabla.
+        Settings es un valor de enumeración que se usa para definir que la tabla se usa para mostrar configuraciones.
+        TableRoot es un contenedor de marcado que se usa para organizar las secciones de la tabla.
+        TableSection es un contenedor de marcado que se usa para organizar los elementos de la tabla.
+        Title es la propiedad que se usa para definir el título de una sección de la tabla.
+        TextCell es un control que se usa para mostrar un texto en una celda de la tabla.
+        Detail es la propiedad que se usa para definir el detalle de un TextCell.
+        Text es la propiedad que se usa para definir el texto de un TextCell.
+        EntryCell es un control que se usa para mostrar una entrada de texto en una celda de la tabla.
+        Label es la propiedad que se usa para definir la etiqueta de un EntryCell.
+        SwitchCell es un control que se usa para mostrar un interruptor en una celda de la tabla.
+        ImageCell es un control que se usa para mostrar una imagen en una celda de la tabla.
+        ImageSource es la propiedad que se usa para definir la fuente de una imagen.
+        
+        https://learn.microsoft.com/pt-br/dotnet/maui/user-interface/controls/tableview?view=net-maui-9.0
+        -->
+
+        <TableView Intent="Settings">
+            <TableRoot>
+                <TableSection Title="First Section">
+                    <TextCell Detail="TextCell Detail" Text="TextCell" />
+                    <EntryCell Label="Entry Label" Text="EntryCell Text" />
+                    <SwitchCell Text="SwitchCell Text" />
+                    <ImageCell
+                    Detail="ImageCell Detail"
+                    ImageSource="dotnet_bot.svg"
+                    Text="ImageCell Text" />
+                </TableSection>
+                <TableSection Title="Second Section">
+                    <TextCell Detail="TextCell Detail" Text="TextCell" />
+                    <EntryCell Label="Entry Label" Text="EntryCell Text" />
+                    <SwitchCell Text="SwitchCell Text" />
+                    <ImageCell
+                    Detail="ImageCell Detail"
+                    ImageSource="dotnet_bot.svg"
+                    Text="ImageCell Text" />
+                </TableSection>
+            </TableRoot>
+        </TableView>
+
+    </StackLayout>
+    
+</ContentPage>
