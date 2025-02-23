@@ -3,15 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiExample.ExFlyoutPage"
              Title="ExFlyoutPage">
-
+    
+    
+    <!--
+    Este es el menu desplazante. 
+    
+    https://learn.microsoft.com/pt-br/dotnet/maui/user-interface/pages/flyoutpage?view=net-maui-9.0
+    -->
     <FlyoutPage.Flyout>
         <ContentPage Title="Menu" Padding="10"
-                     >
-            <StackLayout>
-                <Label Text="Menu" 
+                    >
+            <ScrollView>
+                <StackLayout>
+                    <Label Text="Menu" 
                        FontSize="Title" 
                        HorizontalOptions="Center" 
                        />
+
+                    <!---->
                 <Label Text="ExStackLayout" 
                        FontSize="15" 
                        HorizontalOptions="Center"
@@ -25,6 +34,7 @@
                         FontSize="Body" 
                         Clicked="ExStackLayout"
                         />
+                <!---->
                 <Label Text="ExTabbedPage" 
                        FontSize="15" 
                        HorizontalOptions="Center"
@@ -38,6 +48,7 @@
                         FontSize="Body"
                         Clicked="ExTabbedPage"
                         />
+                <!---->
                 <Label Text="ExGrid" 
                         FontSize="15" 
                         HorizontalOptions="Center"
@@ -51,6 +62,7 @@
                         FontSize="Body"
                         Clicked="ExGrid"
                         />
+                <!---->
                 <Label Text="ExAbsoluteLayout" 
                         FontSize="15" 
                         HorizontalOptions="Center"
@@ -64,6 +76,7 @@
                         FontSize="Body"
                         Clicked="ExAbsoluteLayout"
                         />
+                <!---->
                 <Label Text="ExFlexLayout" 
                         FontSize="15" 
                         HorizontalOptions="Center"
@@ -77,6 +90,7 @@
                         FontSize="Body"
                         Clicked="ExFlexLayout"
                         />
+                <!---->
                 <Label Text="ExControlsPresentation" 
                         FontSize="15" 
                         HorizontalOptions="Center"
@@ -90,6 +104,7 @@
                         FontSize="Body"
                         Clicked="ExControlsPresentation"
                         />
+                <!---->
                 <Label Text="ExComandControl" 
                         FontSize="15" 
                         HorizontalOptions="Center"
@@ -103,21 +118,69 @@
                         FontSize="Body"
                         Clicked="ExComandControl"
                         />
-            </StackLayout> 
+                <!---->
+                <Label Text="ExActivityIndicator" 
+                       FontSize="15" 
+                       HorizontalOptions="Center"
+                       Margin="0,20,0,0"
+                       />
+                <Button
+                       Text="Entrar" 
+                       HorizontalOptions="Center"
+                       Background="FloralWhite"
+                       TextColor="Black"
+                       FontSize="Body"
+                       Clicked="ExActivityIndicator"
+                       />
+                <!---->
+                <Label Text="ExCarouselView" 
+                       FontSize="15" 
+                       HorizontalOptions="Center"
+                       Margin="0,20,0,0"
+                       />
+                <Button
+                       Text="Entrar" 
+                       HorizontalOptions="Center"
+                       Background="FloralWhite"
+                       TextColor="Black"
+                       FontSize="Body"
+                       Clicked="ExCarouselView"
+                       />
+                <!---->
+                <Label Text="ExContentPage" 
+                       FontSize="15" 
+                       HorizontalOptions="Center"
+                       Margin="0,20,0,0"
+                       />
+                <Button
+                       Text="Entrar" 
+                       HorizontalOptions="Center"
+                       Background="FloralWhite"
+                       TextColor="Black"
+                       FontSize="Body"
+                       Clicked="ExContentPage"
+                       />
+               
+
+            </StackLayout>
+            </ScrollView>
         </ContentPage>
-    </FlyoutPage.Flyout> 
-    <!--Este es el menu desplazante, -->
-        <FlyoutPage.Detail>
+    </FlyoutPage.Flyout>
+
+    <!--Este es una paguina base de aterrisage que contiene el contenido inicial-->
+    <!--Para crear espacios de linea en xaml se usa el codigo &#10; -->
+
+    <FlyoutPage.Detail>
         <NavigationPage>
             <x:Arguments>
                 <ContentPage Title="Primera Opcion">
                     <StackLayout>
-                        <Label Text="Esta es la pagina de la opcion&#10;'Primera Opcion' " 
+                        <Label Text="Esta es la pagina base&#10;'Muestra el contenido basico inicial'&#10;No tiene relacion con el menu " 
                                FontSize="Large" 
                                FontAttributes="Bold"
                                HorizontalOptions="Center" 
                                />
-                        <Button Text="Inicio"
+                        <Button Text="No clicar"
                                 HorizontalOptions="Center"
                                 VerticalOptions="Center"
                                 Padding="5"
@@ -130,8 +193,6 @@
             </x:Arguments>
         </NavigationPage>
     </FlyoutPage.Detail>
-    <!--Este es una paguina que contiene el contenido del Label "Inicio" Creo (Alerta)-->
-    <!--Para crear espacios de linea en xaml se usa el codigo &#10; --> 
-
+   
 
 </FlyoutPage>

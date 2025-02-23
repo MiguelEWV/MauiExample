@@ -42,7 +42,21 @@ public partial class ExFlyoutPage : FlyoutPage
     {
         Navigation.PushModalAsync(new ExComandControl());
     }
+    //8888888
+    private void ExActivityIndicator(object sender, EventArgs e)
+    {
+        Navigation.PushModalAsync(new ExActivityIndicator());
+    }
+    private void ExCarouselView(object sender, EventArgs e)
+    {
+        Navigation.PushModalAsync(new ExCarouselView());
+    }
+    private void ExContentPage(object sender, EventArgs e)
+    {
+        Navigation.PushModalAsync(new ExContentPage());
+    }
     
+
 
 
 
